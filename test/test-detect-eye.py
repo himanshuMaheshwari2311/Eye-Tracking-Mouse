@@ -21,6 +21,7 @@ def main():
 		detected_gray_face_img = gray_face_img[y : y + h, x : x + h]
 		detected_face_img = face_img[y : y + h, x : x + h]
 		eyes_detected = eye_haar_cascade.detectMultiScale(detected_gray_face_img)
+		print (len(eyes_detected))
 		for (ex, ey, ew, eh) in eyes_detected:
 			cv.rectangle(detected_face_img, (ex, ey), (ex + ew, ey + eh), (0, 255, 255), 2)
 
